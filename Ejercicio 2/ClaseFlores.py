@@ -1,5 +1,6 @@
 from ClaseRamo import Ramo
 
+
 class Flor(Ramo):
     __numero:int
     __nombre:str
@@ -12,6 +13,9 @@ class Flor(Ramo):
         self.__nombre=nombre
         self.__color=color
         self.__descripcion=descripcion
+    
+    def getn(self):
+        return(self.__numero)
     
     
         
