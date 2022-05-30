@@ -1,35 +1,45 @@
 
 from ClaseFlores import Flor
 import numpy as np
-from numpy import ndarray
+from numpy import array, ndarray
 '''from classMenu import Menu'''
 import csv
 
 class ManejadorFlores:
-    __array=np.array(0,dtype=Flor)
+    __array=[]
     
 
     def __init__(self) -> None:
-        print("ave")
-        archivo=csv.open("flores.csv")
+        __array=np.array(0,dtype=Flor)
+        archivo=open("flores.csv")
         reader=csv.reader(archivo,delimiter=";")
 
         for line in reader:
-            f=Flor(line[0],line[1],line[2],line[3],line[4])
-            self.__array=np.append(f)
+            f=Flor(line[0],line[1],line[2],line[3])
+            self.__array=np.append(self.__array,f)
         archivo.close()
 
     def menuflores(self):
         print("1;Rosas\n2;Girasoles\n3;Dondiego de noche\n4;Hortensias\n5;Petunias\n6;Gladiolos\n7;Nomeolvides\n"
         "8;Cactus de navidad\n9;Ave del paraiso\n10;Jacintos\n11;Aguileña\n12;Boca de dragon")
 
-    def crearramo(self):
-        fn=-1
-        while(fn!="0"):
-            self.menuflores()
-            fn=str(input("Ingrese la flor que quiere ingresar o 0 para finalizar"))
-            cant=int(input("Ingrese la cantridad de flores que quiere agregar"))
+    def getarray(self):
+        return(self.__array)
+    
+    def muestramasvend(self):
+        list=[]
+        
+        list=self.__array
+        print(list[1].getvent())
+        list.sort()
+        i=0
+        for f in list:
+            if i<=5:
+                print("Puesto  numero {} de mas vendida lo tiene la flor:{} con: {} ventas".format(i,f.getnom(),f.getvent()))
+            i+=1
 
-            for elem in self.__array:
-                if(fn==elem.getn()):
-                    print("AGREGANDO")
+
+    
+    def muestraflores(self):
+        for elem in self.__array:
+            print(elem)
