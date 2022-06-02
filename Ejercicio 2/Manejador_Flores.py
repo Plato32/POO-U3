@@ -26,20 +26,20 @@ class ManejadorFlores:
     def getarray(self):
         return(self.__array)
     
+    
+    
     def muestramasvend(self):
         list=[]
-        
-        list=self.__array
+        self.__array=np.sort(self.__array, axis=- 1, kind=None, order=None)[::-1]
+        '''list=self.__array.copy()
         print(list[1].getvent())
-        list.sort()
+        list=list.sort(reverse=True)'''
         i=0
-        for f in list:
+        for f in self.__array:
             if i<=5:
                 print("Puesto  numero {} de mas vendida lo tiene la flor:{} con: {} ventas".format(i,f.getnom(),f.getvent()))
             i+=1
 
-
-    
     def muestraflores(self):
         for elem in self.__array:
             print(elem)

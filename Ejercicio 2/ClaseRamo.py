@@ -24,6 +24,9 @@ class Ramo:
     def addFlor(self,flor):
         self.__flores.append(flor)
  
+    def gettam(self):
+        return(self.__tipo_de_tamaño)
     
+
 
     

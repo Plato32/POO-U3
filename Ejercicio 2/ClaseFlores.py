@@ -33,6 +33,7 @@ class Flor():
     
     def __gt__(self,otro):
         b=False
+        #print("hola")
         if (type(self)==type(otro)) and (type(otro) == Flor):
             b=self.getvent()>otro.getvent()
         return(b)

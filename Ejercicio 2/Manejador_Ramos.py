@@ -23,21 +23,23 @@ class ManejadorRamos:
                     print("AGREGANDO")
                     
                     mf.getarray()[fn-1].cantventas()
-                    '''print(florcita)'''
+                    
                     r.addFlor(mf.getarray()[fn-1])
                 self.__listaR.append(r)
-                r.muestrafloresenramo()
+                #r.muestrafloresenramo()
+    
+    def mostrarportamanio(self,t):
+        band=False
+        for ram in self.__listaR:
+            if ram.gettam()==t:
+                band=True
+                ram.muestrafloresenramo()
+        if not band:
+            print("No hay ramos de ese tamaño")
+
+
 
     
-    
 
-    '''def __init__(self) -> None:
-            archivo=csv.open("flores.csv")
-            reader=csv.reader(archivo,delimiter=";")
-
-            for line in reader:
-                f=Flor(line[0],line[1],line[2],line[3],line[4])
-                self.__array=np.append(f)
-            archivo.close()'''
 
     
