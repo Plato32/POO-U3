@@ -1,15 +1,6 @@
-'''from Manejador_Flores import ManejadorFlores
-from Manejador_Ramos import  ManejadorRamos'''
-from Manejador_Flores import ManejadorFlores
-from classMenu import Menu
+from menu import Menu
 
-if __name__=="__main__":
-    '''mane=ManejadorFlores()
-    #mane.muestraflores()
-    mane.crearramo()
+if __name__ == '__main__':
+    m = Menu()
+    m.mostrar()
 
-    '''
-    m=Menu()
-    
-    
-    
